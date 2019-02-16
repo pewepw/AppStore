@@ -17,6 +17,10 @@
 		4A2E3B18220EF2D200CF5589 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A2E3B16220EF2D200CF5589 /* LaunchScreen.storyboard */; };
 		4A2E3B20220EF37600CF5589 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E3B1F220EF37600CF5589 /* BaseTabBarController.swift */; };
 		4A2E3B23220EFA4C00CF5589 /* AppsSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E3B22220EFA4C00CF5589 /* AppsSearchController.swift */; };
+		4AAC7B6F2218823F006D5984 /* AppsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAC7B6E2218823F006D5984 /* AppsController.swift */; };
+		4AAC7B72221882EF006D5984 /* BaseListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAC7B71221882EE006D5984 /* BaseListController.swift */; };
+		4AAC7B762218851A006D5984 /* AppsGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAC7B752218851A006D5984 /* AppsGroupCell.swift */; };
+		4AAC7B792218888C006D5984 /* AppsHorizontalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAC7B782218888C006D5984 /* AppsHorizontalController.swift */; };
 		BF69485285540CE044C73D3E /* Pods_AppStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9D7F9F5404525F68F6F226 /* Pods_AppStore.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +37,10 @@
 		4A2E3B19220EF2D200CF5589 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A2E3B1F220EF37600CF5589 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		4A2E3B22220EFA4C00CF5589 /* AppsSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsSearchController.swift; sourceTree = "<group>"; };
+		4AAC7B6E2218823F006D5984 /* AppsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsController.swift; sourceTree = "<group>"; };
+		4AAC7B71221882EE006D5984 /* BaseListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListController.swift; sourceTree = "<group>"; };
+		4AAC7B752218851A006D5984 /* AppsGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupCell.swift; sourceTree = "<group>"; };
+		4AAC7B782218888C006D5984 /* AppsHorizontalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHorizontalController.swift; sourceTree = "<group>"; };
 		5C23401EF09EE7707FE7012F /* Pods-AppStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppStore/Pods-AppStore.release.xcconfig"; sourceTree = "<group>"; };
 		7B9D7F9F5404525F68F6F226 /* Pods_AppStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF08BA385702EBC23F402E17 /* Pods-AppStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppStore/Pods-AppStore.debug.xcconfig"; sourceTree = "<group>"; };
@@ -69,7 +77,8 @@
 		4A0B89322215D29200AF3F64 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4A0B89332215D2AF00AF3F64 /* SearchResultcell.swift */,
+				4AAC7B772218855F006D5984 /* Search */,
+				4AAC7B74221884EA006D5984 /* Apps */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -79,6 +88,7 @@
 			children = (
 				4A0B89362215D82C00AF3F64 /* UIView+Layout.swift */,
 				4A0B89382215DB8A00AF3F64 /* VerticalStackView.swift */,
+				4AAC7B71221882EE006D5984 /* BaseListController.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -121,9 +131,43 @@
 		4A2E3B21220EFA2200CF5589 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4A2E3B22220EFA4C00CF5589 /* AppsSearchController.swift */,
+				4AAC7B732218839D006D5984 /* Search */,
+				4AAC7B7022188259006D5984 /* Apps */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		4AAC7B7022188259006D5984 /* Apps */ = {
+			isa = PBXGroup;
+			children = (
+				4AAC7B6E2218823F006D5984 /* AppsController.swift */,
+				4AAC7B782218888C006D5984 /* AppsHorizontalController.swift */,
+			);
+			path = Apps;
+			sourceTree = "<group>";
+		};
+		4AAC7B732218839D006D5984 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				4A2E3B22220EFA4C00CF5589 /* AppsSearchController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		4AAC7B74221884EA006D5984 /* Apps */ = {
+			isa = PBXGroup;
+			children = (
+				4AAC7B752218851A006D5984 /* AppsGroupCell.swift */,
+			);
+			path = Apps;
+			sourceTree = "<group>";
+		};
+		4AAC7B772218855F006D5984 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				4A0B89332215D2AF00AF3F64 /* SearchResultcell.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		7C7CC3DBEF3034423529F92D /* Frameworks */ = {
@@ -254,14 +298,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AAC7B72221882EF006D5984 /* BaseListController.swift in Sources */,
 				4A2E3B20220EF37600CF5589 /* BaseTabBarController.swift in Sources */,
+				4AAC7B762218851A006D5984 /* AppsGroupCell.swift in Sources */,
 				4A015F212217336D00AAA403 /* Service.swift in Sources */,
 				4A015F1D22172D7E00AAA403 /* SearchResult.swift in Sources */,
 				4A0B89392215DB8A00AF3F64 /* VerticalStackView.swift in Sources */,
 				4A2E3B0E220EF2D100CF5589 /* AppDelegate.swift in Sources */,
+				4AAC7B6F2218823F006D5984 /* AppsController.swift in Sources */,
 				4A0B89342215D2AF00AF3F64 /* SearchResultcell.swift in Sources */,
 				4A2E3B23220EFA4C00CF5589 /* AppsSearchController.swift in Sources */,
 				4A0B89372215D82C00AF3F64 /* UIView+Layout.swift in Sources */,
+				4AAC7B792218888C006D5984 /* AppsHorizontalController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
