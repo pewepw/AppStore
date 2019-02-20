@@ -17,6 +17,7 @@
 		4A2E3B18220EF2D200CF5589 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A2E3B16220EF2D200CF5589 /* LaunchScreen.storyboard */; };
 		4A2E3B20220EF37600CF5589 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E3B1F220EF37600CF5589 /* BaseTabBarController.swift */; };
 		4A2E3B23220EFA4C00CF5589 /* AppsSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E3B22220EFA4C00CF5589 /* AppsSearchController.swift */; };
+		4A5AB6D5221DCBB2000553BA /* SocialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AB6D4221DCBB2000553BA /* SocialApp.swift */; };
 		4AAC7B6F2218823F006D5984 /* AppsPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAC7B6E2218823F006D5984 /* AppsPageController.swift */; };
 		4AAC7B72221882EF006D5984 /* BaseListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAC7B71221882EE006D5984 /* BaseListController.swift */; };
 		4AAC7B762218851A006D5984 /* AppsGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAC7B752218851A006D5984 /* AppsGroupCell.swift */; };
@@ -43,6 +44,7 @@
 		4A2E3B19220EF2D200CF5589 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A2E3B1F220EF37600CF5589 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		4A2E3B22220EFA4C00CF5589 /* AppsSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsSearchController.swift; sourceTree = "<group>"; };
+		4A5AB6D4221DCBB2000553BA /* SocialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialApp.swift; sourceTree = "<group>"; };
 		4AAC7B6E2218823F006D5984 /* AppsPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPageController.swift; sourceTree = "<group>"; };
 		4AAC7B71221882EE006D5984 /* BaseListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListController.swift; sourceTree = "<group>"; };
 		4AAC7B752218851A006D5984 /* AppsGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupCell.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 			children = (
 				4A015F1C22172D7E00AAA403 /* SearchResult.swift */,
 				4AB642FF2219BAE900B3D2A1 /* AppGroup.swift */,
+				4A5AB6D4221DCBB2000553BA /* SocialApp.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				4AAC7B762218851A006D5984 /* AppsGroupCell.swift in Sources */,
 				4AB642FA2219A2CB00B3D2A1 /* AppsPageHeader.swift in Sources */,
 				4A015F212217336D00AAA403 /* Service.swift in Sources */,
+				4A5AB6D5221DCBB2000553BA /* SocialApp.swift in Sources */,
 				4A015F1D22172D7E00AAA403 /* SearchResult.swift in Sources */,
 				4A0B89392215DB8A00AF3F64 /* VerticalStackView.swift in Sources */,
 				4A2E3B0E220EF2D100CF5589 /* AppDelegate.swift in Sources */,

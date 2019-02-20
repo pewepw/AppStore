@@ -26,7 +26,6 @@ class Service {
             
             do {
                 let searchResult = try JSONDecoder().decode(SearchResult.self, from: data)
-//                searchResult.results.forEach({print($0.trackName, $0.primaryGenreName)})
                 completion(searchResult.results, nil)
             } catch let jsonErr {
                 print("Failed to decode json:", jsonErr)
@@ -66,6 +65,28 @@ class Service {
                 completion(nil, error)
                 print("Failed to decode:", error)
             }
-            }.resume()
+        }.resume()
+    }
+    
+    func fetchSocialApps(completion: @escaping ([SocialApp]?, Error?) -> Void) {
+        let urlString = "https://api.letsbuildthatapp.com/appstore/social"
+        guard let url = URL(string: urlString) else { return }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, err) in
+            
+            if let err = err {
+                print("Failed to fetch games:", err)
+                completion(nil, err)
+                return
+            }
+            
+            do {
+                let objects = try JSONDecoder().decode([SocialApp].self, from: data!)
+                completion(objects, nil)
+            } catch {
+                completion(nil, error)
+                print("Failed to decode:", error)
+            }
+        }.resume()
     }
 }

@@ -12,6 +12,8 @@ class AppsHeaderHorizontalController: BaseListController, UICollectionViewDelega
     
     let cellId = "cellId"
     
+    var socialApps = [SocialApp]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,15 +30,24 @@ class AppsHeaderHorizontalController: BaseListController, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
+        return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return socialApps.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! AppsHeaderCell
+        let socialApp = socialApps[indexPath.item]
+        
+        cell.companyLabel.text = socialApp.name
+        cell.titleLabel.text = socialApp.tagline
+        
+        if let imageUrl = URL(string: socialApp.imageUrl) {
+           cell.imageView.sd_setImage(with: imageUrl)
+        }
+        
         return cell
     }
 }
