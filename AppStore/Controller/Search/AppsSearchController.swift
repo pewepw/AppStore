@@ -48,13 +48,13 @@ class AppsSearchController: BaseListController {
     }
     
     fileprivate func fetchITunesApps(searchTerm: String) {
-        Service.shared.fetchApps(searchTerm: searchTerm) { (results, err) in
+        Service.shared.fetchApps(searchTerm: searchTerm) { (res, err) in
             if let err = err {
                 print("Failed to fetch apps:", err)
                 return
             }
             
-            self.appResults = results
+            self.appResults = res?.results ?? []
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
