@@ -18,6 +18,7 @@
 		4A2E3B20220EF37600CF5589 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E3B1F220EF37600CF5589 /* BaseTabBarController.swift */; };
 		4A2E3B23220EFA4C00CF5589 /* AppsSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E3B22220EFA4C00CF5589 /* AppsSearchController.swift */; };
 		4A5AB6D5221DCBB2000553BA /* SocialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AB6D4221DCBB2000553BA /* SocialApp.swift */; };
+		4AA994FF22207A9700AEA21C /* HorizontalSnappingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA994FE22207A9700AEA21C /* HorizontalSnappingController.swift */; };
 		4AAC7B6F2218823F006D5984 /* AppsPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAC7B6E2218823F006D5984 /* AppsPageController.swift */; };
 		4AAC7B72221882EF006D5984 /* BaseListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAC7B71221882EE006D5984 /* BaseListController.swift */; };
 		4AAC7B762218851A006D5984 /* AppsGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAC7B752218851A006D5984 /* AppsGroupCell.swift */; };
@@ -45,6 +46,7 @@
 		4A2E3B1F220EF37600CF5589 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		4A2E3B22220EFA4C00CF5589 /* AppsSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsSearchController.swift; sourceTree = "<group>"; };
 		4A5AB6D4221DCBB2000553BA /* SocialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialApp.swift; sourceTree = "<group>"; };
+		4AA994FE22207A9700AEA21C /* HorizontalSnappingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSnappingController.swift; sourceTree = "<group>"; };
 		4AAC7B6E2218823F006D5984 /* AppsPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPageController.swift; sourceTree = "<group>"; };
 		4AAC7B71221882EE006D5984 /* BaseListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListController.swift; sourceTree = "<group>"; };
 		4AAC7B752218851A006D5984 /* AppsGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupCell.swift; sourceTree = "<group>"; };
@@ -102,10 +104,11 @@
 		4A0B89352215D80300AF3F64 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				4AAC7B7C22189E67006D5984 /* Extensions.swift */,
 				4A0B89362215D82C00AF3F64 /* UIView+Layout.swift */,
 				4A0B89382215DB8A00AF3F64 /* VerticalStackView.swift */,
 				4AAC7B71221882EE006D5984 /* BaseListController.swift */,
-				4AAC7B7C22189E67006D5984 /* Extensions.swift */,
+				4AA994FE22207A9700AEA21C /* HorizontalSnappingController.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				4A0B89372215D82C00AF3F64 /* UIView+Layout.swift in Sources */,
 				4AAC7B792218888C006D5984 /* AppsHorizontalController.swift in Sources */,
 				4AAC7B7D22189E67006D5984 /* Extensions.swift in Sources */,
+				4AA994FF22207A9700AEA21C /* HorizontalSnappingController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
