@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4A015F1D22172D7E00AAA403 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A015F1C22172D7E00AAA403 /* SearchResult.swift */; };
 		4A015F212217336D00AAA403 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A015F202217336D00AAA403 /* Service.swift */; };
+		4A021B2D22211A8C003037A0 /* AppDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A021B2C22211A8C003037A0 /* AppDetailController.swift */; };
+		4A021B3022212350003037A0 /* AppDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A021B2F22212350003037A0 /* AppDetailCell.swift */; };
 		4A0B89342215D2AF00AF3F64 /* SearchResultcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0B89332215D2AF00AF3F64 /* SearchResultcell.swift */; };
 		4A0B89372215D82C00AF3F64 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0B89362215D82C00AF3F64 /* UIView+Layout.swift */; };
 		4A0B89392215DB8A00AF3F64 /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0B89382215DB8A00AF3F64 /* VerticalStackView.swift */; };
@@ -35,6 +37,8 @@
 /* Begin PBXFileReference section */
 		4A015F1C22172D7E00AAA403 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		4A015F202217336D00AAA403 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		4A021B2C22211A8C003037A0 /* AppDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailController.swift; sourceTree = "<group>"; };
+		4A021B2F22212350003037A0 /* AppDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailCell.swift; sourceTree = "<group>"; };
 		4A0B89332215D2AF00AF3F64 /* SearchResultcell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultcell.swift; sourceTree = "<group>"; };
 		4A0B89362215D82C00AF3F64 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		4A0B89382215DB8A00AF3F64 /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
@@ -90,6 +94,14 @@
 				4A015F202217336D00AAA403 /* Service.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		4A021B2E22212341003037A0 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				4A021B2F22212350003037A0 /* AppDetailCell.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 		4A0B89322215D29200AF3F64 /* View */ = {
@@ -163,6 +175,7 @@
 				4AAC7B6E2218823F006D5984 /* AppsPageController.swift */,
 				4AAC7B782218888C006D5984 /* AppsHorizontalController.swift */,
 				4AB642FB2219A4B600B3D2A1 /* AppsHeaderHorizontalController.swift */,
+				4A021B2C22211A8C003037A0 /* AppDetailController.swift */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -178,6 +191,7 @@
 		4AAC7B74221884EA006D5984 /* Apps */ = {
 			isa = PBXGroup;
 			children = (
+				4A021B2E22212341003037A0 /* Details */,
 				4AAC7B752218851A006D5984 /* AppsGroupCell.swift */,
 				4AAC7B7A22189DD2006D5984 /* AppRowCell.swift */,
 				4AB642F92219A2CB00B3D2A1 /* AppsPageHeader.swift */,
@@ -322,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A021B2D22211A8C003037A0 /* AppDetailController.swift in Sources */,
 				4AAC7B72221882EF006D5984 /* BaseListController.swift in Sources */,
 				4A2E3B20220EF37600CF5589 /* BaseTabBarController.swift in Sources */,
 				4AAC7B762218851A006D5984 /* AppsGroupCell.swift in Sources */,
@@ -341,6 +356,7 @@
 				4A0B89372215D82C00AF3F64 /* UIView+Layout.swift in Sources */,
 				4AAC7B792218888C006D5984 /* AppsHorizontalController.swift in Sources */,
 				4AAC7B7D22189E67006D5984 /* Extensions.swift in Sources */,
+				4A021B3022212350003037A0 /* AppDetailCell.swift in Sources */,
 				4AA994FF22207A9700AEA21C /* HorizontalSnappingController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
