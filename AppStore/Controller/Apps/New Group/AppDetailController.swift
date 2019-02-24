@@ -20,10 +20,28 @@ class AppDetailController: BaseListController, UICollectionViewDelegateFlowLayou
                     self.collectionView.reloadData()
                 }
             }
+            
+            let reviewsUrl = "https://itunes.apple.com/rss/customerreviews/page=1/id=\(appId ?? "")/sortby=mostrecent/json?l=en&cc=us"
+            Service.shared.fetchGeneicJSONData(urlString: reviewsUrl) { (reviews: Reviews?, error) in
+                if let error = error {
+                    print(error)
+                    return
+                }
+                
+                self.reviews = reviews
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+                
+//                reviews?.feed.entry.forEach({ (entry) in
+//                    print(entry.title.label, entry.author.name.label)
+//                })
+            }
         }
     }
     
     var app: Result?
+    var reviews: Reviews?
     
     let detailCellId = "detailCellId"
     let previewCellId = "previewCellId"
@@ -55,6 +73,7 @@ class AppDetailController: BaseListController, UICollectionViewDelegateFlowLayou
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reviewCellId, for: indexPath) as! ReviewRollCell
+            cell.reviewsController.reviews = reviews
             return cell
         }
     }

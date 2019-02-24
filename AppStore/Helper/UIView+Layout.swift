@@ -83,17 +83,17 @@ extension UIView {
         }
     }
     
-    func centerXInSuperview() {
+    func centerXInSuperview(constant: CGFloat = 0) {
         translatesAutoresizingMaskIntoConstraints = false
         if let superViewCenterXAnchor = superview?.centerXAnchor {
-            centerXAnchor.constraint(equalTo: superViewCenterXAnchor).isActive = true
+            centerXAnchor.constraint(equalTo: superViewCenterXAnchor, constant: constant).isActive = true
         }
     }
     
-    func centerYInSuperview() {
+    func centerYInSuperview(constant: CGFloat = 0) {
         translatesAutoresizingMaskIntoConstraints = false
         if let centerY = superview?.centerYAnchor {
-            centerYAnchor.constraint(equalTo: centerY).isActive = true
+            centerYAnchor.constraint(equalTo: centerY, constant: constant).isActive = true
         }
     }
     

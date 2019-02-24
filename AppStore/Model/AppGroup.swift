@@ -29,17 +29,11 @@ struct AppGroup: Decodable {
 struct Feed: Decodable {
     let title: String
     let id: String
-    let author: Author
     let links: [Link]
     let copyright, country: String
     let icon: String
     let updated: String
     let results: [FeedResult]
-}
-
-struct Author: Decodable {
-    let name: String
-    let uri: String
 }
 
 struct Link: Decodable {
