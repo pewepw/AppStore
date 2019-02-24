@@ -227,9 +227,9 @@
 		4AC8E7622222DB5200EBB336 /* Details */ = {
 			isa = PBXGroup;
 			children = (
-				4AC8E7652222DD0300EBB336 /* ReviewsController.swift */,
 				4A021B2C22211A8C003037A0 /* AppDetailController.swift */,
 				4A021B3322213EBA003037A0 /* PreviewScreenshotsController.swift */,
+				4AC8E7652222DD0300EBB336 /* ReviewsController.swift */,
 			);
 			name = Details;
 			path = "New Group";
