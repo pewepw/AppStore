@@ -89,11 +89,6 @@ class SearchResultcell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-//        let labelsStackView = UIStackView(arrangedSubviews: [
-//                nameLabel, categoryLabel, ratingsLabel
-//            ])
-//        labelsStackView.axis = .vertical
-        
         let labelsStackView = VerticalStackView(arrangedSubviews: [
                 nameLabel, categoryLabel, ratingsLabel
             ])
@@ -109,12 +104,6 @@ class SearchResultcell: UICollectionViewCell {
             ])
         screenshotsStackView.spacing = 12
         screenshotsStackView.distribution = .fillEqually
-        
-//        let overallStackView = UIStackView(arrangedSubviews: [
-//                infoTopStackView, screenshotsStackView
-//            ])
-//        overallStackView.axis = .vertical
-//        overallStackView.spacing = 15
         
         let overallStackView = VerticalStackView(arrangedSubviews: [
                 infoTopStackView, screenshotsStackView
