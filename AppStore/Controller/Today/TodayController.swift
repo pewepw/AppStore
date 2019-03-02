@@ -15,7 +15,6 @@ class TodayController: BaseListController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         collectionView.backgroundColor = UIColor.groupTableViewBackground
         collectionView.register(TodayCell.self, forCellWithReuseIdentifier: cellId)
         
@@ -35,12 +34,19 @@ class TodayController: BaseListController {
         return cell
     }
     
+    var appFullScreenController: UIViewController!
+    
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let redView = UIView()
-        redView.backgroundColor = .red
+        let appFullScreenController = AppFullScreenController()
+        
+        let redView = appFullScreenController.view!
         redView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleRemoveRedView)))
         view.addSubview(redView)
         redView.frame = CGRect(x: 0, y: 0, width: 100, height: 200)
+        
+        addChild(appFullScreenController)
+        
+        self.appFullScreenController = appFullScreenController
         
         guard let cell = collectionView.cellForItem(at: indexPath) else { return }
         print(cell.frame)
@@ -54,6 +60,7 @@ class TodayController: BaseListController {
         
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
             redView.frame = self.view.frame
+            self.tabBarController?.tabBar.transform = CGAffineTransform(translationX: 0, y: 100)
         }, completion: nil)
     }
     
@@ -62,8 +69,10 @@ class TodayController: BaseListController {
     @objc func handleRemoveRedView(gesture: UITapGestureRecognizer) {
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
             gesture.view?.frame = self.startingFrame ?? .zero
+            self.tabBarController?.tabBar.transform = .identity
         }, completion: { _ in
             gesture.view?.removeFromSuperview()
+            self.appFullScreenController.removeFromParent()
         })
     }
 }
