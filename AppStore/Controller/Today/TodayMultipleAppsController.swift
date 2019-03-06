@@ -22,13 +22,13 @@ class TodayMultipleAppsController: BaseListController, UICollectionViewDelegateF
         
         collectionView.register(MultipleAppCell.self, forCellWithReuseIdentifier: cellId)
         
-        Service.shared.fetchGames { (appGroup, error) in
-            self.results = appGroup?.feed.results ?? []
-            
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
-        }
+//        Service.shared.fetchGames { (appGroup, error) in
+//            self.results = appGroup?.feed.results ?? []
+//
+//            DispatchQueue.main.async {
+//                self.collectionView.reloadData()
+//            }
+//        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
