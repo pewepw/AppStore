@@ -224,11 +224,11 @@
 		4A7AEECD22284D4D0032EB62 /* Today */ = {
 			isa = PBXGroup;
 			children = (
+				4A938997222C2FC800857E3A /* BaseTodayCell.swift */,
 				4A7AEECE22284D5F0032EB62 /* TodayCell.swift */,
 				4AB1FF37222A579200CE40F6 /* AppFullScreenDescriptionCell.swift */,
 				4AB1FF39222A60C700CE40F6 /* AppFullScreenHeaderCell.swift */,
 				4A938995222C276600857E3A /* TodayMultipleAppCell.swift */,
-				4A938997222C2FC800857E3A /* BaseTodayCell.swift */,
 				4A639596222F4F31003418AC /* MultipleAppCell.swift */,
 			);
 			path = Today;
