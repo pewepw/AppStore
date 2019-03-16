@@ -40,6 +40,56 @@ class AppFullScreenController: UIViewController, UITableViewDataSource, UITableV
         tableView.dataSource = self
         tableView.delegate = self
         
+        setupFloatingControls()
+    }
+    
+    let floatingContainerView = UIView()
+    
+    fileprivate func setupFloatingControls() {
+        floatingContainerView.layer.cornerRadius = 16
+        floatingContainerView.clipsToBounds = true
+        view.addSubview(floatingContainerView)
+        
+//        let bottomPadding = UIApplication.shared.statusBarFrame.height
+        floatingContainerView.anchor(top: nil, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor, padding: .init(top: 0, left: 16, bottom: -90, right: 16), size: .init(width: 0, height: 90))
+        
+        let blurVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .regular))
+        floatingContainerView.addSubview(blurVisualEffectView)
+        blurVisualEffectView.fillSuperview()
+        
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+        
+        let getButton = UIButton(title: "GET")
+        getButton.setTitleColor(.white, for: .normal)
+        getButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        getButton.backgroundColor = .darkGray
+        getButton.layer.cornerRadius = 16
+        getButton.constrainHeight(constant: 32)
+        getButton.constrainWidth(constant: 80)
+        
+        let imageView = UIImageView(cornerRadius: 16)
+        imageView.image = todayItem?.image
+        imageView.constrainHeight(constant: 68)
+        imageView.constrainWidth(constant: 68)
+        
+        let stackView = UIStackView(arrangedSubviews: [
+                imageView,
+                VerticalStackView(arrangedSubviews: [
+                        UILabel(text: "Life Hack", font: .boldSystemFont(ofSize: 18)),
+                        UILabel(text: "Utilizing Your Time", font: .systemFont(ofSize: 16))
+                    ], spacing: 4),
+                getButton
+            ], customSpacing: 16)
+        
+        floatingContainerView.addSubview(stackView)
+        stackView.fillSuperview(padding: .init(top: 0, left: 16, bottom: 0, right: 16))
+        stackView.alignment = .center
+    }
+    
+    @objc fileprivate func handleTap() {
+        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
+            self.floatingContainerView.transform = CGAffineTransform(translationX: 0, y: -90)
+        }, completion: nil)
     }
     
     fileprivate func setupCloseButton() {
@@ -78,6 +128,30 @@ class AppFullScreenController: UIViewController, UITableViewDataSource, UITableV
             scrollView.isScrollEnabled = false
             scrollView.isScrollEnabled = true
         }
+        
+        //refactored
+//        if scrollView.contentOffset.y > 100 {
+//            UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
+//                let translationY = -90 - UIApplication.shared.statusBarFrame.height
+//                self.floatingContainerView.transform = .init(translationX: 0, y: translationY)
+//            }, completion: nil)
+//        } else {
+//            UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
+//                self.floatingContainerView.transform = .identity
+//            }, completion: nil)
+//        }
+//
+        let translationY = -90 - UIApplication.shared.statusBarFrame.height
+        let transform = scrollView.contentOffset.y > 100 ? CGAffineTransform(translationX: 0, y: translationY) : .identity
+        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
+            if scrollView.contentOffset.y > 100 {
+                self.floatingContainerView.transform = transform
+            } else {
+                UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
+                    self.floatingContainerView.transform = transform
+                }, completion: nil)
+            }
+        }, completion: nil)
     }
     
     @objc fileprivate func handleDismiss(button: UIButton) {
